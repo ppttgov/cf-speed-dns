@@ -21,8 +21,8 @@ jobs:
     - name: Download worker file
       run: |
         curl -fsSL "https://raw.githubusercontent.com/ZhiXuanWang/cf-speed-dns/main/index.html" -o index.html
-        curl -fsSL "https://raw.githubusercontent.com/ZhiXuanWang/cf-speed-dns/main/pTop.html" -o pTop.html
-        curl -fsSL "https://raw.githubusercontent.com/ZhiXuanWang/cf-speed-dns/main/pTop10.html" -o pTop10.html
+        curl -fsSL "https://raw.githubusercontent.com/ZhiXuanWang/cf-speed-dns/refs/heads/main/ipTop.html" -o pTop.html
+        curl -fsSL "https://raw.githubusercontent.com/ZhiXuanWang/cf-speed-dns/refs/heads/main/ipTop10.html" -o pTop10.html
 
     - name: Commit changes
       run: |
