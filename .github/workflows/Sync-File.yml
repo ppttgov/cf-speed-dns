@@ -24,18 +24,10 @@ jobs:
         curl -fsSL "https://raw.githubusercontent.com/ZhiXuanWang/cf-speed-dns/refs/heads/main/ipTop.html" -o ipTop.html
         curl -fsSL "https://raw.githubusercontent.com/ZhiXuanWang/cf-speed-dns/refs/heads/main/ipTop10.html" -o ipTop10.html
 
-    - name: Auto-commit changes
-      timeout-minutes: 3
+    - name: Commit changes
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
-        
-        # 检测文件变化后再提交
-        if git diff --quiet --exit-code; then
-          echo "No changes detected."
-        else
-          git add index.html ipTop.html ipTop10.html
-          git commit -m "chore: Auto-update worker files [$(date +'%Y-%m-%d %H:%M')]"
-          git push
-          echo "Changes committed successfully."
-        fi
+        git add index.html ipTop.html ipTop10.html
+        git commit -m "chore: Auto-update index.html" || echo "No changes to commit"
+        git push
