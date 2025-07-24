@@ -29,7 +29,7 @@ jobs:
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git add index.html
-        git add pTop.html
-        git add pTop10.html
+        git add ipTop.html
+        git add ipTop10.html
         git commit -m "chore: Auto-update index.html" || echo "No changes to commit"
         git push
